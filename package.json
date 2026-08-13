@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "concurrently": "^10.0.4",
-    "prettier": "^3.9.6"
+    "prettier": "^3.9.6",
+    "zod": "^3.25.76"
   }
 }
