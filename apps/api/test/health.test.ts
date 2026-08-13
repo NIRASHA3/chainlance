@@ -8,9 +8,7 @@ describe('ChainLance API', () => {
     it('returns the API health status', async () => {
       const app = createApp();
 
-      const response = await request(app)
-        .get('/api/v1/health')
-        .expect(200);
+      const response = await request(app).get('/api/v1/health').expect(200);
 
       expect(response.body).toEqual({
         status: 'ok',
@@ -24,9 +22,7 @@ describe('ChainLance API', () => {
     it('returns a structured JSON 404 response', async () => {
       const app = createApp();
 
-      const response = await request(app)
-        .get('/api/v1/not-found')
-        .expect(404);
+      const response = await request(app).get('/api/v1/not-found').expect(404);
 
       expect(response.body).toEqual({
         error: {

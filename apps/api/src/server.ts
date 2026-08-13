@@ -4,9 +4,7 @@ import { env } from './config/env.js';
 const app = createApp();
 
 const server = app.listen(env.PORT, () => {
-  console.log(
-    `ChainLance API running on http://localhost:${env.PORT}`,
-  );
+  console.log(`ChainLance API running on http://localhost:${env.PORT}`);
 });
 
 const shutdown = (signal: string) => {
@@ -14,10 +12,7 @@ const shutdown = (signal: string) => {
 
   server.close((error) => {
     if (error) {
-      console.error(
-        'Failed to close HTTP server cleanly.',
-        error,
-      );
+      console.error('Failed to close HTTP server cleanly.', error);
 
       process.exit(1);
     }
