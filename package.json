@@ -1,0 +1,30 @@
+{
+  "name": "chainlance",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Decentralized freelance marketplace with milestone-based Ethereum escrow, dispute resolution and verifiable reputation.",
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "blockchain"
+  ],
+  "engines": {
+    "node": ">=22.13.0 <23"
+  },
+  "scripts": {
+    "dev": "concurrently -n web,api \"npm:dev:web\" \"npm:dev:api\"",
+    "dev:web": "npm run dev -w @chainlance/web",
+    "dev:api": "npm run dev -w @chainlance/api",
+    "build": "npm run build --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check",
+    "check": "npm run format:check && npm run lint && npm run typecheck && npm run test && npm run build"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.4",
+    "prettier": "^3.9.6"
+  }
+}
