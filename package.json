@@ -9,7 +9,7 @@
     "blockchain"
   ],
   "engines": {
-    "node": ">=22.13.0 <23"
+    "node": ">=24 <25"
   },
   "scripts": {
     "dev": "concurrently -n web,api \"npm:dev:web\" \"npm:dev:api\"",
